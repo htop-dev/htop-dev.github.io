@@ -12,7 +12,7 @@ HAMLFILES = index \
 all: clean prep
 
 deploy: 
-	$(RSYNC) *.html *.ico images assets dist
+	$(RSYNC) CNAME *.html *.ico images assets dist
 	git add dist && git commit -m "dist update"
 	git subtree push --prefix dist origin gh-pages
 
