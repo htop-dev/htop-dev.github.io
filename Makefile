@@ -1,9 +1,9 @@
 URL = https://htop.dev
 WEB = htop-dev.github.io
 
-RSYNC := rsync -azvP --prune-empty-dirs --exclude '*.haml' \
-	--exclude '.git' --exclude '.github' --exclude '.gitignore' \
-	--exclude 'Makefile' --exclude 'images' --exclude '*.swp'
+RSYNC := rsync -azvP --prune-empty-dirs \
+	--exclude '*.haml' --exclude 'Makefile' --exclude '*.swp' \
+	--exclude '.git' --exclude '.github' --exclude '.gitignore'
 LDIRT = *.html favicon.ico
 
 HAMLFILES = index \
