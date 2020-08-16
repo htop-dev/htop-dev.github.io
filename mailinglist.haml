@@ -14,45 +14,26 @@
           To be informed of new releases, subscribe to the
           = succeed ":" do
             %b htop mailing list
-        / BEGIN FreeLists WEB FORM
-        %form{:action => "http://www.freelists.org/cgi-bin/subscription.cgi", :method => "post"}
-          Enter your email address:
-          %input{:name => "email", :type => "text"}/
-          %input{:name => "list", :type => "hidden", :value => "YOURLISTNAMEHERE"}/
-          %input{:name => "url_or_message", :type => "hidden", :value => ""}/
-          %select{:name => "action"}
-            %option{:value => "subscribe"} Subscribe
-            %option{:value => "unsubscribe"} Unsubscribe
-            %option{:value => "set digest"} Turn Digest mode on
-            %option{:value => "unset digest"} Turn Digest mode off
-            %option{:value => "set vacation"} Turn Vacation mode on
-            %option{:value => "unset vacation"} Turn Vacation mode off
-            %option{:value => "help"} Get Help
-          %input{:type => "submit", :value => "Go!"}/
-        / END FreeLists WEB FORM
         %p
-          You can also subscribe by sending an email to
-          %a{:href => "mailto:htop-request@freelists.org"} htop-request@freelists.org
+          You can subscribe by sending an email to
+          %a{:href => "mailto:htop+subscribe@groups.io"} htop+subscribe@groups.io
           with
           "subscribe" in the subject.
           %br/
-          Likewise, to unsubscribe send a message to this address with with "unsubscribe" in the subject.
-          %br/
-          Or just use the form above!
+          Likewise, to unsubscribe send a message to
+          %a{:href => "mailto:htop+unsubscribe@groups.io"} htop+unsubscribe@groups.io
+          with "unsubscribe" in the subject.
         %p
           You can also search the
           = succeed "." do
-            %a{:href => "http://www.freelists.org/archive/htop/"} list archive
+            %a{:href => "https://groups.io/g/htop/topics"} list archive
         %p
           More information at the
           = succeed "," do
-            %a{:href => "http://www.freelists.org/list/htop"} htop mailing list page
+            %a{:href => "https://groups.io/g/htop"} htop mailing list page
           = succeed "." do
-            %a{:href => "http://www.freelists.org"} FreeLists
-        %p
-          The archive of the old mailing is still available
-          = succeed "." do
-            %a{:href => "https://sourceforge.net/p/htop/mailman/htop-general"} here
+            %a{:href => "https://groups.io"} Groups.io
+          page.
     %br/
     %br/
     %br/
