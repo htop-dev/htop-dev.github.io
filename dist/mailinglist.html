@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>htop - an interactive process viewer</title>
+<script>
+  function animateBackground() {
+     var f = 1;
+     var terminal = document.querySelector(".fullscreen");
+     var ctx = document.getElementById("terminal").getContext('2d');
+     var timer = window.setInterval( function() {
+        var img = document.querySelector(".frame" + f);
+        if (img.complete) {
+           ctx.drawImage(img, 0, 0);
+        }
+        f++;
+        if (f == 4) { f = 0; }
+     }, 1000);
+  }
+</script>
+<style>
+  .fullscreen {
+     width: 100%;
+     height: 100%;
+     z-index: -100;
+     position: fixed;
+     left: 0;
+     top: 0;
+     margin: 0px;
+     padding: 0px;
+  }
+</style>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet'>
+<link href='assets/css/htop.css' media='all' rel='stylesheet' type='text/css'>
+<link href='images/htop.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body onload='animateBackground();'>
+<div class='fullscreen'>
+<canvas height='592' id='terminal' style='width:100%' width='900'></canvas>
+</div>
+<img class='frame0' height='0' src='images/frame-0.png' width='0'>
+<img class='frame1' height='0' src='images/frame-1.png' width='0'>
+<img class='frame2' height='0' src='images/frame-2.png' width='0'>
+<img class='frame3' height='0' src='images/frame-3.png' width='0'>
+
+<div class='content'>
+<div class='logo'>
+<a href='index.html'>
+<img src='images/htop-logo.png'>
+</a>
+</div>
+
+<table style='margin:0; padding:0; width: 100%;'>
+<tr style='margin:0; padding:0;'>
+<td style='margin:0; padding:0;'>
+<div class='menu'>
+<ul class='menu'>
+<li class='menuli'>
+<a class='menuitem' href='downloads.html'>Download</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='screenshots.html'>Screenshots</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='sightings.html'>Sightings</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='mailinglist.html'>List</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='faq.html'>FAQ</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='https://github.com/htop-dev/htop/issues'>Bug tracker</a>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+
+<div class='page'>
+<h1>Mailing list</h1>
+<p>
+To be informed of new releases, subscribe to the
+<b>htop mailing list</b>:
+</p>
+<p>
+You can subscribe by sending an email to
+<a href='mailto:htop+subscribe@groups.io'>htop+subscribe@groups.io</a>
+with
+"subscribe" in the subject.
+<br>
+Likewise, to unsubscribe send a message to
+<a href='mailto:htop+unsubscribe@groups.io'>htop+unsubscribe@groups.io</a>
+with "unsubscribe" in the subject.
+</p>
+<p>
+You can also search the
+<a href='https://groups.io/g/htop/topics'>list archive</a>.
+</p>
+<p>
+More information at the
+<a href='https://groups.io/g/htop'>htop mailing list page</a>,
+<a href='https://groups.io'>Groups.io</a>.
+page.
+</p>
+</div>
+</div>
+<br>
+<br>
+<br>
+</body>
+</html>

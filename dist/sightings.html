@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>htop - an interactive process viewer</title>
+<script>
+  function animateBackground() {
+     var f = 1;
+     var terminal = document.querySelector(".fullscreen");
+     var ctx = document.getElementById("terminal").getContext('2d');
+     var timer = window.setInterval( function() {
+        var img = document.querySelector(".frame" + f);
+        if (img.complete) {
+           ctx.drawImage(img, 0, 0);
+        }
+        f++;
+        if (f == 4) { f = 0; }
+     }, 1000);
+  }
+</script>
+<style>
+  .fullscreen {
+     width: 100%;
+     height: 100%;
+     z-index: -100;
+     position: fixed;
+     left: 0;
+     top: 0;
+     margin: 0px;
+     padding: 0px;
+  }
+</style>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet'>
+<link href='assets/css/htop.css' media='all' rel='stylesheet' type='text/css'>
+<link href='images/htop.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body onload='animateBackground();'>
+<div class='fullscreen'>
+<canvas height='592' id='terminal' style='width:100%' width='900'></canvas>
+</div>
+<img class='frame0' height='0' src='images/frame-0.png' width='0'>
+<img class='frame1' height='0' src='images/frame-1.png' width='0'>
+<img class='frame2' height='0' src='images/frame-2.png' width='0'>
+<img class='frame3' height='0' src='images/frame-3.png' width='0'>
+
+<div class='content'>
+<div class='logo'>
+<a href='index.html'>
+<img src='images/htop-logo.png'>
+</a>
+</div>
+
+<table style='margin:0; padding:0; width: 100%;'>
+<tr style='margin:0; padding:0;'>
+<td style='margin:0; padding:0;'>
+<div class='menu'>
+<ul class='menu'>
+<li class='menuli'>
+<a class='menuitem' href='downloads.html'>Download</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='screenshots.html'>Screenshots</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='sightings.html'>Sightings</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='mailinglist.html'>List</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='faq.html'>FAQ</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='https://github.com/htop-dev/htop/issues'>Bug tracker</a>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+
+<div class='page'>
+<h1>htop in popular culture :-D</h1>
+<p>
+To my complete amazement, htop has been featured in
+a few pieces of media over the years. It always makes
+my day when someone emails me telling they've spotted
+htop in a film or TV show.
+</p>
+<p>
+At Hugo Gualandi's suggestion, here's a page with some of
+these sightings.
+Please send an
+<a href='mailinglist.html'>email</a>
+notification if you find others - thanks!
+</p>
+<hr>
+<p>
+Finding Your Roots (2017), according to Wikipedia is "a documentary television
+series" on the American TV channel PBS. Amazingly, htop makes an appearance
+in an episode on Bernie Sanders and Larry David!
+Thanks to Julians for the
+<a href='https://youtu.be/-9AGDtG3aFA?t=2999'>link</a>!
+</p>
+<a href='images/finding-your-roots.jpg'>
+<img src='images/finding-your-roots.jpg' width='600/'>
+</a>
+<hr>
+<p>
+Tatort (2017), according to Wikipedia is "a German language police procedural
+television series that has been running continuously since 1970 with some 30
+feature-length episodes per year, which makes it the longest-running German
+TV-drama." Thanks to
+<a href='https://twitter.com/badboy_'>Jan-Erik</a>
+for the
+<a href='https://twitter.com/badboy_/status/843747509965148160'>link</a>!
+</p>
+<a href='images/tatort.jpg'>
+<img src='images/tatort.jpg'>
+</a>
+<hr>
+<p>
+<a href='https://www.youtube.com/watch?v=4xjSlHRBBck'>"Watch Dogs 2"</a>
+(2016),
+video game. htop appears in the character's phone. Thanks to @digital_night_owl
+for the link!
+</p>
+<a href='images/watchdogs2.jpg'>
+<img src='images/watchdogs2.jpg'>
+</a>
+<hr>
+<p>
+Video for
+<a href='https://www.youtube.com/watch?v=9WUoT6GVtXI'>
+Jean-Michel
+Jarre's "Oxygene 17"
+</a>
+(2016). Thanks to Chris Clemson for the screenshot!
+</p>
+<a href='images/jmj.png'>
+<img src='images/jmj.jpg'>
+</a>
+<hr>
+<p>
+<a href='http://www.imdb.com/title/tt4158110/'>"Mr. Robot"</a>
+(2015), TV series. It's clearly a Hollywood mockup and not the actual
+software, but it's pretty evident they were going for the htop look. :)
+Thanks to Hugo Gualandi for the screenshot!
+</p>
+<a href='images/mrrobot.png'>
+<img src='images/mrrobot.jpg'>
+</a>
+<hr>
+<p>
+<a href='http://www.imdb.com/title/tt1837703/'>"The Fifth Estate"</a>
+(2013),
+movie. Another Hollywood mockup, but the trademark look of the meters is there. :)
+Thanks to Pierre Chapuis for the link!
+</p>
+<a href='images/fifthestate.png'>
+<img src='images/fifthestate.jpg'>
+</a>
+</div>
+</div>
+<br>
+<br>
+<br>
+</body>
+</html>
