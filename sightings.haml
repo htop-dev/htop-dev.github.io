@@ -1,0 +1,81 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body{:onload => "animateBackground();"}
+    = Haml::Engine.new(File.read("assets/haml-includes/fullscreen.haml")).render
+    .content
+      = Haml::Engine.new(File.read("assets/haml-includes/logo.haml")).render
+      = Haml::Engine.new(File.read("assets/haml-includes/menu.haml")).render
+      .page
+        %h1 htop in popular culture :-D
+        %p
+          To my complete amazement, htop has been featured in
+          a few pieces of media over the years. It always makes
+          my day when someone emails me telling they've spotted
+          htop in a film or TV show.
+        %p
+          At Hugo Gualandi's suggestion, here's a page with some of
+          these sightings.
+          Please send an
+          %a{:href => "mailinglist.html"} email
+          notification if you find others - thanks!
+        %hr/
+        %p
+          Finding Your Roots (2017), according to Wikipedia is "a documentary television
+          series" on the American TV channel PBS. Amazingly, htop makes an appearance
+          in an episode on Bernie Sanders and Larry David!
+          Thanks to Julians for the
+          = succeed "!" do
+            %a{:href => "https://youtu.be/-9AGDtG3aFA?t=2999"} link
+        %a{:href => "images/finding-your-roots.jpg"}
+          %img{:src => "images/finding-your-roots.jpg", :width => "600/"}/
+        %hr/
+        %p
+          Tatort (2017), according to Wikipedia is "a German language police procedural
+          television series that has been running continuously since 1970 with some 30
+          feature-length episodes per year, which makes it the longest-running German
+          TV-drama." Thanks to
+          %a{:href => "https://twitter.com/badboy_"} Jan-Erik
+          for the
+          = succeed "!" do
+            %a{:href => "https://twitter.com/badboy_/status/843747509965148160"} link
+        %a{:href => "images/tatort.jpg"}
+          %img{:src => "images/tatort.jpg"}/
+        %hr/
+        %p
+          %a{:href => "https://www.youtube.com/watch?v=4xjSlHRBBck"} "Watch Dogs 2"
+          (2016),
+          video game. htop appears in the character's phone. Thanks to @digital_night_owl
+          for the link!
+        %a{:href => "images/watchdogs2.jpg"}
+          %img{:src => "images/watchdogs2.jpg"}/
+        %hr/
+        %p
+          Video for
+          %a{:href => "https://www.youtube.com/watch?v=9WUoT6GVtXI"}
+            Jean-Michel
+            Jarre's "Oxygene 17"
+          (2016). Thanks to Chris Clemson for the screenshot!
+        %a{:href => "images/jmj.png"}
+          %img{:src => "images/jmj.jpg"}/
+        %hr/
+        %p
+          %a{:href => "http://www.imdb.com/title/tt4158110/"} "Mr. Robot"
+          (2015), TV series. It's clearly a Hollywood mockup and not the actual
+          software, but it's pretty evident they were going for the htop look. :)
+          Thanks to Hugo Gualandi for the screenshot!
+        %a{:href => "images/mrrobot.png"}
+          %img{:src => "images/mrrobot.jpg"}/
+        %hr/
+        %p
+          %a{:href => "http://www.imdb.com/title/tt1837703/"} "The Fifth Estate"
+          (2013),
+          movie. Another Hollywood mockup, but the trademark look of the meters is there. :)
+          Thanks to Pierre Chapuis for the link!
+        %a{:href => "images/fifthestate.png"}
+          %img{:src => "images/fifthestate.jpg"}/
+    %br/
+    %br/
+    %br/

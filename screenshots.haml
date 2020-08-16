@@ -1,0 +1,111 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body{:onload => "animateBackground();"}
+    = Haml::Engine.new(File.read("assets/haml-includes/fullscreen.haml")).render
+    .content
+      = Haml::Engine.new(File.read("assets/haml-includes/logo.haml")).render
+      = Haml::Engine.new(File.read("assets/haml-includes/menu.haml")).render
+      .page
+        %h1 Screenshots
+        %p
+          Htop is of course a text-mode program, but here are
+          some screenshots of it running in terminals:
+        %p
+          New-style graphs using Braille Unicode characters, inspired by
+          = succeed "," do
+            %a{:href => "https://github.com/MrRio/vtop"} vtop
+        %p
+          %a{:href => "images/htop-2.0.png"}
+            %img{:src => "images/htop-2.0.png"}/
+        %p
+          Tree view, drawn with Unicode characters, new in htop 1.0:
+        %p
+          %a{:href => "images/htop-1.0-screenshot.png"}
+            %img{:src => "images/htop-1.0-screenshot.png"}/
+        %p
+        %hr/
+        %p
+          htop 1.0 showing the CPU average meter in graph mode:
+        %p
+          %a{:href => "images/htop_graph.gif"}
+            %img{:src => "images/htop_graph.gif"}/
+        %p
+        %hr/
+        %p
+          Since htop 1.0, there is better visual support for large numbers of processors. Here's a 64-core machine:
+        %p
+          %a{:href => "images/htop-64.png"}
+            %img{:src => "images/htop-64.png", :width => "700px"}/
+        %p
+        %hr/
+        %p
+          Configuring I/O scheduling priority (press "i"), new in htop 1.0.2:
+        %p
+          %img{:src => "images/htop-1.0.2-io.png"}/
+        %p
+        %hr/
+        %p
+          Configuring CPU affinity (press "a"), new in htop 0.7:
+        %p
+          %img{:src => "images/affinity.png"}/
+        %p
+        %hr/
+        %p
+          Tree view, SMP, and other features available since htop 0.5:
+        %p
+          %img{:src => "images/htop-0.5.png"}/
+        %p
+        %hr/
+        %p
+          Color themes are available since htop 0.5.4, to suit both dark and light terminals:
+        %p
+          %img{:src => "images/white_terminal.png"}/
+        %p
+        %hr/
+        %p
+          Default look, as of htop 0.4:
+        %p
+          %img{:src => "images/htop-0.4.png"}/
+        %p
+        %hr/
+        %p
+          A more conservative setup, using a monochrome terminal:
+        %p
+          %img{:src => "images/htop-monochrome.png"}/
+        %p
+        %hr/
+        %p
+          The meters at the header are fully customizable:
+        %p
+          %img{:src => "images/htop-novo.png"}/
+        %p
+        %hr/
+        %p
+          An impressive setup: htop running on a machine with 128 cores and 1TB of RAM:
+        %p
+          %a{:href => "images/128.png"}
+            %img{:src => "images/128.png", :width => "700px"}/
+        %p
+        %hr/
+        %p
+          And thanks to htop's 4-column display mode, you can fit even more cores in a screen
+          with ease and still have left for process information: here's a POWER8 machine with 176 cores!
+          (Thanks to
+          %a{:href => "http://twitter.com/stdlib"} @stdlib
+          for the screenshot)
+        %p
+          %a{:href => "images/176.png"}
+            %img{:src => "images/176.png", :width => "700px"}/
+        %p
+        %hr/
+        %p
+          And here's the other extreme -- htop running on the tiny Raspberry Pi:
+        %p
+          %a{:href => "images/RPi.png"}
+            %img{:src => "images/RPi.png", :width => "700px"}/
+    %br/
+    %br/
+    %br/

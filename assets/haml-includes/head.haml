@@ -1,0 +1,32 @@
+%meta{'charset' => 'utf-8'}
+%meta{'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge,chrome=1'}
+%meta{'name' => 'viewport', :content => 'initial-scale=1'}
+%title htop - an interactive process viewer
+:javascript
+      function animateBackground() {
+         var f = 1;
+         var terminal = document.querySelector(".fullscreen");
+         var ctx = document.getElementById("terminal").getContext('2d');
+         var timer = window.setInterval( function() {
+            var img = document.querySelector(".frame" + f);
+            if (img.complete) {
+               ctx.drawImage(img, 0, 0);
+            }
+            f++;
+            if (f == 4) { f = 0; }
+         }, 1000);
+      }
+:css
+      .fullscreen {
+         width: 100%;
+         height: 100%;
+         z-index: -100;
+         position: fixed;
+         left: 0;
+         top: 0;
+         margin: 0px;
+         padding: 0px;
+      }
+%link{:href => "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700", :rel => "stylesheet"}
+%link{:href => 'assets/css/htop.css', :rel => :stylesheet, :type => "text/css", :media => "all"}
+%link{:href => 'images/htop.ico', :rel => "shortcut icon", :type => "image/ico"}

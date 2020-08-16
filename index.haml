@@ -1,0 +1,48 @@
+!!! html
+%html
+  %head
+    = Haml::Engine.new(File.read("assets/haml-includes/head.haml")).render
+
+  %body{:onload => "animateBackground();"}
+    = Haml::Engine.new(File.read("assets/haml-includes/fullscreen.haml")).render
+    .content
+      = Haml::Engine.new(File.read("assets/haml-includes/logo.haml")).render
+      = Haml::Engine.new(File.read("assets/haml-includes/menu.haml")).render
+      .page
+        %h1 htop - an interactive process viewer
+        %p
+          This is htop, a cross-platform interactive process viewer.
+          It is a text-mode application (for console or X terminals) and requires ncurses.
+        %p
+          %a{:href => "https://github.com/htop-dev/htop/releases"} Latest release.
+        %h2 What's new in htop
+        %p
+          The latest releases in htop include delay accounting metrics for Linux,
+          Solaris/Illumos/OpenIndiana and DragonFly BSD support,
+          as well as many other features and bugfixes.
+          Check out the
+          %a{:href => "https://github.com/htop-dev/htop/ChangeLog"} changelog
+          for more details and credits!
+        %p
+          And here is Hisham's lightning talk at
+          %a{:href => "https://fosdem.org"} FOSDEM
+          presenting the latest and upcoming features:
+        %p{:style => "text-align:center"}
+          %iframe{:allow => "autoplay; encrypted-media", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube-nocookie.com/embed/L25waVhy78o", :width => "560"}
+        %p
+          Since version 2.0, htop is now
+          %a{:href => "https://fosdem.org/2016/schedule/event/htop/"} cross-platform!
+          Check out the
+          %a{:href => "https://youtu.be/g5GamptmWeA"} video
+          and
+          %a{:href => "htop_talk.pdf"} slides
+          of Hisham's presentation at FOSDEM 2016 about how this came to be.
+          This release includes code supporting Linux, FreeBSD, OpenBSD, DragonFly BSD and MacOSX.
+        %center
+          %p
+            %a{:href => "images/htop-2.0.png"}
+              %img{:src => "images/htop-2.0.png"}/
+        %hr/
+    %br/
+    %br/
+    %br/
