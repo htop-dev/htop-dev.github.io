@@ -4,14 +4,14 @@ WEB = htop-dev.github.io
 RSYNC := rsync -azvP --prune-empty-dirs \
 	--exclude '*.haml' --exclude 'Makefile' --exclude '*.swp' \
 	--exclude '.git' --exclude '.github' --exclude '.gitignore'
-LDIRT = *.html favicon.ico
+LDIRT = *.html favicon.ico links.out
 
 HAMLFILES = index \
 	downloads faq mailinglist screenshots sightings
 
-all: clean prep local
+all: clean prep
 
-local: 
+deploy: 
 	$(RSYNC) *.html *.ico images assets dist
 	git add dist && git commit -m "dist update"
 	git subtree push --prefix dist origin gh-pages
@@ -21,6 +21,7 @@ prep:
 	for h in `echo $(HAMLFILES)`; do \
 	    haml $$h.haml > $$h.html; \
 	done
+	@echo Type "make deploy" to publish content.
 
 check:
 	linkchecker --check-extern -v $(URL) | grep -v seconds > links.out || /bin/true
