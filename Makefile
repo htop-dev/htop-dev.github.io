@@ -9,19 +9,17 @@ LDIRT = *.html favicon.ico links.out
 HAMLFILES = index \
 	downloads faq mailinglist screenshots sightings
 
-all: clean prep
+all: clean default
 
-deploy: 
-	$(RSYNC) CNAME *.html *.ico images assets dist
-	git add dist && git commit -m "dist update"
-	git subtree push --prefix dist origin gh-pages
-
-prep:
+default:
 	ln -s images/htop.ico favicon.ico
 	for h in `echo $(HAMLFILES)`; do \
-	    haml $$h.haml > $$h.html; \
+	    haml $$h.haml > dist/$$h.html; \
 	done
-	@echo Type "make deploy" to publish content.
+	$(RSYNC) CNAME *.ico images assets dist
+
+deploy: 
+	git subtree push --prefix dist origin gh-pages
 
 check:
 	linkchecker --check-extern -v $(URL) | grep -v seconds > links.out || /bin/true
