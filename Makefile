@@ -12,18 +12,14 @@ HAMLFILES = index \
 all: clean default
 
 default:
-	rm -f site/favicon.ico
-	ln -s images/htop.ico site/favicon.ico
+	rm -f docs/favicon.ico
+	ln -s images/htop.ico docs/favicon.ico
 	for h in `echo $(HAMLFILES)`; do \
-	    haml $$h.haml > site/$$h.html; \
+	    haml $$h.haml > docs/$$h.html; \
 	done
-	$(RSYNC) CNAME images assets site
-	git add site
+	$(RSYNC) CNAME images assets docs
+	git add docs
 	git status
-
-deploy: 
-	git commit -m 'Website content update'
-	git push
 
 check:
 	linkchecker --check-extern -v $(URL) | grep -v seconds > links.out || /bin/true
