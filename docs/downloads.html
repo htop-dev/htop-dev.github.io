@@ -101,6 +101,115 @@ You can obtain it freely in two forms:
 </li>
 </ul>
 <p>
+<b>What's new in htop 3.0.0:</b>
+</p>
+<ul>
+<li>
+Support ZFS ARC statistics
+(thanks to Ross Williams)
+</li>
+<li>
+Support more than 2 smaller CPU meter columns
+(thanks to Christoph Budziszewski)
+</li>
+<li>
+Support Linux proportional set size metrics
+(thanks to @linvinus, @ntninja and @himikof)
+</li>
+<li>
+Support Linux pressure stall information metrics
+(thanks to Ran Benita)
+</li>
+<li>
+New display option to show CPU frequency in CPU meters
+(thanks to Arnav Singh)
+</li>
+<li>
+Update Linux sysfs battery discovery for recent kernels
+(thanks to @smattie)
+</li>
+<li>
+Add timestamp reporting to the strace screen
+(thanks to Mario Harjac)
+</li>
+<li>
+Add simple, optional vim key mapping mode
+(thanks to Daniel Flanagan)
+</li>
+<li>
+Added an option to disable the mouse
+(thanks to MartinJM)
+</li>
+<li>
+Add Solaris11 compatibility
+(thanks to Jan Senolt)
+</li>
+<li>
+Without an argument -u uses $USER value automatically
+(thanks to @solanav)
+</li>
+<li>
+Support less(1) search navigation shortcuts
+(thanks to @syrrim)
+</li>
+<li>
+Update the FreeBSD maximum PID to match FreeBSD change
+(thanks to @multiplexd)
+</li>
+<li>
+Report values larger than 100 terabytes
+(thanks to @adrien1018)
+</li>
+<li>
+Widen ST_UID (UID) column to allow for UIDs > 9999
+(thanks to DLange)
+</li>
+<li>
+BUGFIX: fix makefiles for building with clang
+(thanks to Jorge Pereira)
+</li>
+<li>
+BUGFIX: fix <sys/sysmacros.h> major() usage
+(thanks to @wataash and Kang-Che Sung)
+</li>
+<li>
+BUGFIX: fix the STARTTIME column on FreeBSD
+(thanks to Rob Crowston)
+</li>
+<li>
+BUGFIX: truncate overwide jail names on FreeBSD
+(thanks to Rob Crowston)
+</li>
+<li>
+BUGFIX: fix reported memory values on FreeBSD
+(thanks to Tobias Kortkamp)
+</li>
+<li>
+BUGFIX: fix reported CPU meter values on OpenBSD
+(thanks to @motet-a)
+</li>
+<li>
+BUGFIX: correctly identify other types of zombie process
+(thanks to @joder)
+</li>
+<li>
+BUGFIX: improve follow-process handling in some situations
+(thanks to @wangqr)
+</li>
+<li>
+BUGFIX: fix custom meters reverting to unexpected setting
+(thanks to @wangqr)
+</li>
+<li>
+BUGFIX: close pipe after running lsof(1)
+(thanks to Jesin)
+</li>
+<li>
+BUGFIX: meters honour setting of counting CPUs from 0/1
+(thanks to @rnsanchez)
+</li>
+</ul>
+<p>
 <b>What's new in htop 2.2.0:</b>
 </p>
 <ul>

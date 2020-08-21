@@ -22,6 +22,87 @@
             %a{:href => "#binaries"} Binaries
             \- pre-compiled binaries, provided by distributions
         %p
+          %b What's new in htop 3.0.0:
+        %ul
+          %li
+            Support ZFS ARC statistics
+            (thanks to Ross Williams)
+          %li
+            Support more than 2 smaller CPU meter columns
+            (thanks to Christoph Budziszewski)
+          %li
+            Support Linux proportional set size metrics
+            (thanks to @linvinus, @ntninja and @himikof)
+          %li
+            Support Linux pressure stall information metrics
+            (thanks to Ran Benita)
+          %li
+            New display option to show CPU frequency in CPU meters
+            (thanks to Arnav Singh)
+          %li
+            Update Linux sysfs battery discovery for recent kernels
+            (thanks to @smattie)
+          %li
+            Add timestamp reporting to the strace screen
+            (thanks to Mario Harjac)
+          %li
+            Add simple, optional vim key mapping mode
+            (thanks to Daniel Flanagan)
+          %li
+            Added an option to disable the mouse
+            (thanks to MartinJM)
+          %li
+            Add Solaris11 compatibility
+            (thanks to Jan Senolt)
+          %li
+            Without an argument -u uses $USER value automatically
+            (thanks to @solanav)
+          %li
+            Support less(1) search navigation shortcuts
+            (thanks to @syrrim)
+          %li
+            Update the FreeBSD maximum PID to match FreeBSD change
+            (thanks to @multiplexd)
+          %li
+            Report values larger than 100 terabytes
+            (thanks to @adrien1018)
+          %li
+            Widen ST_UID (UID) column to allow for UIDs > 9999
+            (thanks to DLange)
+          %li
+            BUGFIX: fix makefiles for building with clang
+            (thanks to Jorge Pereira)
+          %li
+            BUGFIX: fix <sys/sysmacros.h> major() usage
+            (thanks to @wataash and Kang-Che Sung)
+          %li
+            BUGFIX: fix the STARTTIME column on FreeBSD
+            (thanks to Rob Crowston)
+          %li
+            BUGFIX: truncate overwide jail names on FreeBSD
+            (thanks to Rob Crowston)
+          %li
+            BUGFIX: fix reported memory values on FreeBSD
+            (thanks to Tobias Kortkamp)
+          %li
+            BUGFIX: fix reported CPU meter values on OpenBSD
+            (thanks to @motet-a)
+          %li
+            BUGFIX: correctly identify other types of zombie process
+            (thanks to @joder)
+          %li
+            BUGFIX: improve follow-process handling in some situations
+            (thanks to @wangqr)
+          %li
+            BUGFIX: fix custom meters reverting to unexpected setting
+            (thanks to @wangqr)
+          %li
+            BUGFIX: close pipe after running lsof(1)
+            (thanks to Jesin)
+          %li
+            BUGFIX: meters honour setting of counting CPUs from 0/1
+            (thanks to @rnsanchez)
+        %p
           %b What's new in htop 2.2.0:
         %ul
           %li
