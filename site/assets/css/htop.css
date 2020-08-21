@@ -1,0 +1,165 @@
+* {
+   font-family: "Open Sans", "bitstream vera sans", "verdana", "helvetica", "arial", "luxi sans", "sans";
+}
+tt {
+   font-family: "bitstream vera sans mono", "courier new", "courier", "monospace";
+   border-radius: 5px;
+   color: white;
+   background-color: #222222;
+   box-shadow: 0px 0px 5px #222222;
+   padding: 2px;
+   padding-left: 4px;
+   padding-right: 4px;
+}
+body {
+   background: url("frame-0.png");
+   background-color: #000000;
+   background-repeat: repeat-y;
+   background-position: top right;
+   background-attachment: fixed;
+   background-size: 100%;
+   color: #bbb;
+}
+.logo {
+   text-align: center;
+   padding-bottom: 10px;
+}
+
+.content {
+   background-color: black;
+   color: #bbb;
+   padding-left: 50px;
+   padding-right: 50px;
+   padding-top: 20px;
+   padding-bottom: 50px;
+   margin-top: 250px;
+   margin-right: 10%;
+   margin-left: 10%;
+   box-shadow: 0px 0px 10px #00ffff;
+   border: solid 2px #00ffff;
+}
+
+div.menu {
+   background-color: #009020;
+   box-shadow: 0px 0px 10px #00902099;
+   height: 40px;
+}
+
+ul.menu {
+   list-style-type: none;
+   height: 40px;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+li.menuli {
+   float: left;
+}
+
+a.menuitem {
+   padding-right: 16px;
+   padding-left: 16px;
+   display: block;
+   line-height: 40px;
+   text-decoration: none;
+   background-color: #009020;
+   color: black;
+   text-decoration: none;
+   font-size: large;
+}
+
+a.menuitem:hover {
+   background-color: #009090;
+   box-shadow: 0px 0px 10px #009090;
+}
+
+h1 {
+   color: black;
+   background-color: #30b0c0;
+   box-shadow: 0px 0px 10px #30b0c099;
+   font-weight: normal;
+   text-align: center;
+   margin-top: 0px;
+   padding-top: 0px;
+}
+h2 {
+   color: #30d0f0;
+   text-shadow: 0px 0px 5px #30d0f099;
+}
+h3 {
+   color: #30d0f0;
+   text-shadow: 0px 0px 5px #30d0f099;
+}
+span.hilite {
+   color: #30d0f0;
+   text-shadow: 0px 0px 5px #30d0f099;
+   font-weight: bold;
+}
+a {
+   color: #30d070;
+   text-shadow: 0px 0px 5px #30d0f099;
+}
+p.center {
+   text-align: center;
+}
+p.footer {
+   text-align: center;
+   font-style: italic;
+   font-size: smaller;
+}
+td {
+   padding: 10px;
+}
+td.menu {
+   background-color: #406070;
+}
+
+li {
+   padding-bottom: 10px;
+}
+li.x {
+   padding-bottom: 3px;
+}
+p.question {
+   color: #306070;
+   padding-top: 10px;
+   font-weight: bold;
+}
+img {
+   max-width: 100%;
+}
+
+@media (max-width: 999px) {
+   .content {
+      margin-top: 50px;
+      margin-left: 5%;
+      margin-right: 5%;
+   }
+   body {
+      font-size: 3.5vw;
+      max-height: 999999px;
+   }
+   h1 {
+      font-size: 5vw;
+   }
+   h2 {
+      font-size: 4vw;
+   }
+   h3 {
+      font-size: 3.5vw;
+   }
+   a.menuitem {
+      font-size: 3.5vw;
+      line-height: 6vw;
+      height: 6vw;
+      padding-left: 1.5vw;
+      padding-right: 1.5vw;
+   }
+   div.menu {
+      height: 6vw;
+   }
+   ul.menu {
+      height: 6vw;
+   }
+}

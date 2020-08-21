@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>htop - an interactive process viewer</title>
+<script>
+  function animateBackground() {
+     var f = 1;
+     var terminal = document.querySelector(".fullscreen");
+     var ctx = document.getElementById("terminal").getContext('2d');
+     var timer = window.setInterval( function() {
+        var img = document.querySelector(".frame" + f);
+        if (img.complete) {
+           ctx.drawImage(img, 0, 0);
+        }
+        f++;
+        if (f == 4) { f = 0; }
+     }, 1000);
+  }
+</script>
+<style>
+  .fullscreen {
+     width: 100%;
+     height: 100%;
+     z-index: -100;
+     position: fixed;
+     left: 0;
+     top: 0;
+     margin: 0px;
+     padding: 0px;
+  }
+</style>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet'>
+<link href='assets/css/htop.css' media='all' rel='stylesheet' type='text/css'>
+<link href='images/htop.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body onload='animateBackground();'>
+<div class='fullscreen'>
+<canvas height='592' id='terminal' style='width:100%' width='900'></canvas>
+</div>
+<img class='frame0' height='0' src='images/frame-0.png' width='0'>
+<img class='frame1' height='0' src='images/frame-1.png' width='0'>
+<img class='frame2' height='0' src='images/frame-2.png' width='0'>
+<img class='frame3' height='0' src='images/frame-3.png' width='0'>
+
+<div class='content'>
+<div class='logo'>
+<a href='index.html'>
+<img src='images/htop-logo.png'>
+</a>
+</div>
+
+<table style='margin:0; padding:0; width: 100%;'>
+<tr style='margin:0; padding:0;'>
+<td style='margin:0; padding:0;'>
+<div class='menu'>
+<ul class='menu'>
+<li class='menuli'>
+<a class='menuitem' href='downloads.html'>Download</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='screenshots.html'>Screenshots</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='sightings.html'>Sightings</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='mailinglist.html'>List</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='faq.html'>FAQ</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='https://github.com/htop-dev/htop/issues'>Bug tracker</a>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+
+<div class='page'>
+<h1>Downloads</h1>
+<p>
+<a href='https://github.com/htop-dev/htop/releases'>Latest release.</a>
+</p>
+<p>
+You can obtain it freely in two forms:
+</p>
+<ul>
+<li>
+<a href='#sources'>Sources</a>
+- source code, provided in this site
+</li>
+<li>
+<a href='#binaries'>Binaries</a>
+- pre-compiled binaries, provided by distributions
+</li>
+</ul>
+<p>
+<b>What's new in htop 2.2.0:</b>
+</p>
+<ul>
+<li>
+Solaris/Illumos/OpenIndiana support
+(thanks to Guy M. Broome)
+</li>
+<li>
+-t/--tree flag for starting in tree-view mode
+(thanks to Daniel Flanagan)
+</li>
+<li>
+macOS: detects High Sierra version to avoid OS bug
+(thanks to Pierre Malhaire)
+</li>
+<li>
+OpenBSD: read battery data
+(thanks to @nerd972)
+</li>
+<li>
+Various automake and build improvements
+(thanks to Kang-Che Sung)
+</li>
+<li>
+Check for pkg-config when building with --enable-delayacct
+(thanks to @florian2833z for the report)
+</li>
+<li>
+Avoid some bashisms in configure script
+(thanks to Jesin)
+</li>
+<li>
+Use CFLAGS from ncurses*-config if present
+(thanks to Michael Klein)
+</li>
+<li>
+Header generator supports non-UTF-8 environments
+(thanks to @volkov-am)
+</li>
+<li>
+Linux: changed detection of kernel threads
+</li>
+<li>
+Collapse current subtree pressing Backspace
+</li>
+<li>
+BUGFIX: fix behavior of SYSCR column
+(thanks to Marc Kleine-Budde)
+</li>
+<li>
+BUGFIX: obtain exit code of lsof correctly
+(thanks to @wangqr)
+</li>
+<li>
+BUGFIX: fix crash with particular keycodes
+(thanks to Wellington Torrejais da Silva for the report)
+</li>
+<li>
+BUGFIX: fix issue with small terminals
+(thanks to Daniel Elf for the report)
+</li>
+<li>
+BUGFIX: fix terminal color issues
+(thanks to Kang-Che Sung for the report)
+</li>
+<li>
+BUGFIX: preserve LDFLAGS when building
+(thanks to Lance Frederickson for the report)
+</li>
+<li>
+BUGFIX: fixed overflow for systems with &gt;= 100 signals
+</li>
+</ul>
+<p>
+<b>What's new in htop 2.1.0:</b>
+</p>
+<ul>
+<li>
+Linux: Delay accounting metrics
+(thanks to André Carvalho)
+</li>
+<li>
+DragonFly BSD support
+(thanks to Diederik de Groot)
+</li>
+<li>
+Support for real-time signals
+(thanks to Kang-Che Sung)
+</li>
+<li>
+'c' key now works with threads as well
+</li>
+<li>
+Session column renamed from SESN to SID
+(thanks to Kamyar Rasta)
+</li>
+<li>
+Improved UI for meter style selection
+(thanks to Kang-Che Sung)
+</li>
+<li>
+Improved code for constructing process tree
+(thanks to wangqr)
+</li>
+<li>
+Compile-time option to disable setuid
+</li>
+<li>
+Error checking of various standard library operations
+</li>
+<li>
+Replacement of sprintf with snprintf
+(thanks to Tomasz Kramkowski)
+</li>
+<li>
+Linux: performance improvements in battery meter
+</li>
+<li>
+Linux: update process TTY device
+</li>
+<li>
+Linux: add support for sorting TASK_IDLE
+(thanks to Vladimir Panteleev)
+</li>
+<li>
+Linux: add upper-bound to running process counter
+(thanks to Lucas Correia Villa Real)
+</li>
+<li>
+BUGFIX: avoid crash when battery is removed
+(thanks to Jan Chren)
+</li>
+<li>
+BUGFIX: macOS: fix infinite loop in tree view
+(thanks to Wataru Ashihara)
+</li>
+</ul>
+<p>
+<b>What's new in htop 2.0.2:</b>
+</p>
+<ul>
+<li>
+Mac OS X: stop trying when task_for_pid fails for a process,
+stops spamming logs with errors.
+</li>
+<li>
+Add Ctrl+A and Ctrl+E to go to beginning and end of line
+</li>
+<li>
+FreeBSD: fixes for CPU calculation
+(thanks to Tim Creech, Andy Pilate)
+</li>
+<li>
+Usability: auto-follow process after a search.
+</li>
+<li>
+Use Linux backend on GNU Hurd
+</li>
+<li>
+Improvement for reproducible builds.
+</li>
+<li>
+Fix behavior of Alt-key combinations
+(thanks to Kang-Che Sung)
+</li>
+<li>
+Various code tweaks and cleanups
+(thanks to Kang-Che Sung)
+</li>
+</ul>
+<p>
+<b>What's new in htop 2.0.1:</b>
+</p>
+<ul>
+<li>
+OpenBSD: Various fixes and improvements
+(thanks to Michael McConville and Juan Francisco Cantero Hurtado)
+</li>
+<li>
+FreeBSD: fix CPU and memory readings
+(thanks to Tim Creech, Hung-Yi Chen, Bernard Spil, Greg V)
+</li>
+<li>
+FreeBSD: add battery support
+(thanks to Greg V)
+</li>
+<li>
+Linux: Retain last-obtained name of a zombie process
+</li>
+<li>
+Mac OS X: Improve portability for OS X versions
+(thanks to Michael Klein)
+</li>
+<li>
+Mac OS X: Fix reading command-line arguments and basename
+</li>
+<li>
+Mac OS X: Fix process state information
+</li>
+<li>
+Mac OS X: Fix tree view collapsing/expanding
+</li>
+<li>
+Mac OS X: Fix tree organization
+</li>
+<li>
+Mac OS X: Fix memory accounting
+</li>
+<li>
+Fix crash when emptying a column of meters
+</li>
+<li>
+Make Esc key more responsive
+</li>
+</ul>
+<p>
+<b>What's new in htop 2.0.0:</b>
+</p>
+<ul>
+<li>
+Platform abstraction layer
+</li>
+<li>
+Initial FreeBSD support
+</li>
+<li>
+Initial Mac OS X support
+(thanks to David Hunt)
+</li>
+<li>
+Swap meter for Mac OSX
+(thanks to Ștefan Rusu)
+</li>
+<li>
+OpenBSD port
+(thanks to Michael McConville)
+</li>
+<li>
+FreeBSD support improvements
+(thanks to Martin Misuth)
+</li>
+<li>
+Support for NCurses 6 ABI, including mouse wheel support
+</li>
+<li>
+Much improved mouse responsiveness
+</li>
+<li>
+Process environment variables screen
+(thanks to Michael Klein)
+</li>
+<li>
+Higher-resolution UTF-8 based Graph mode
+(Thanks to James Hall from vtop for the idea!)
+</li>
+<li>
+Show program path settings
+(thanks to Tobias Geerinckx-Rice)
+</li>
+<li>
+BUGFIX: Fix crash when scrolling an empty filtered list.
+</li>
+<li>
+Use dynamic units for text display, and several fixes
+(thanks to Christian Hesse)
+</li>
+<li>
+BUGFIX: fix error caused by overflow in usertime calculation.
+(thanks to Patrick Marlier)
+</li>
+<li>
+Catch all memory allocation errors
+(thanks to Michael McConville for the push)
+</li>
+<li>
+Several tweaks and bugfixes
+(See the Git log for details and contributors!)
+</li>
+</ul>
+<hr>
+<a name='sources'></a>
+<h3>Sources</h3>
+<p>
+Building htop is straightforward, as it uses GNU Autotools: the typical
+<tt>./configure; make; sudo make install</tt>
+should do the trick.
+However, you may prefer to use binaries packaged for your distribution,
+<a href='#binaries'>see below</a>.
+</p>
+<ul>
+<li><b>
+<u>Stable, tarball</u>
+</b>: Check out the official tarball for the
+<a href='https://github.com/htop-dev/htop/releases'>
+latest version
+</a>.
+</li>
+<li><b>Development, from the Git repository</b>: You can fetch the work-in-progress sources for
+the next release using
+<a href='http://git-scm.org'>Git</a>:
+<br>
+<tt>
+git clone https://github.com/htop-dev/htop
+</tt>
+<br>
+You can also
+<a href='https://github.com/htop-dev/htop'>browse the Git tree</a>
+online.
+</li>
+</ul>
+<a name='binaries'></a>
+<h3>Binaries</h3>
+<p>
+Packages for htop are available in most distros.
+Try the package manager from your system; chances are
+<tt>htop</tt>
+is available from there.
+</p>
+<ul>
+<li><b>GoboLinux</b>: In
+<a href='http://www.gobolinux.org'>GoboLinux</a>
+you can fetch and compile htop by typing:
+<tt>
+Compile htop
+</tt>
+</li>
+<li><b>Debian</b>:
+In Debian you can fetch htop by typing:
+<tt>
+apt-get install htop
+</tt>
+<br>
+You can also download the binary packages from the
+<a href='http://packages.debian.org/htop'>Debian webpage</a>.
+<br>
+Thanks to Eugene Lyubimkin and Bartosz Fenski.
+</li>
+<li><b>Fedora</b>:
+htop is part of Fedora Extras; you can fetch it by typing:
+<tt>
+yum install htop
+</tt>
+<br>
+Thanks to Dawid Gajownik.
+</li>
+<li><b>RedHat</b>You can find RPM packages at
+<a href='http://fedoraproject.org/wiki/EPEL'>EPEL</a>
+<br>
+Thanks to Josh Stone for the tip.
+</li>
+<li><b>Slackware</b>: htop is part of Slackware. You can find it in the ap/ section.
+<br>
+Thanks to Patrick Volkerding for including it, and to Fred Broders for earlier packages.
+</li>
+<li><b>Gentoo</b>: In Gentoo Linux you can emerge the
+<a href='http://gentoo-portage.com/sys-process/htop'>sys-process/htop</a>
+package by typing:
+<tt>
+emerge sys-process/htop
+</tt>
+<br>
+Thanks to Wolfram Schlich.
+</li>
+<li><b>AltLinux</b>: here are the
+<a href='http://sisyphus.ru/en/srpm/Sisyphus/htop/get'>latest RPMs</a>
+for AltLinux.
+<br>
+Thanks to Ilya Evseev.
+</li>
+<li><b>OpenSuSE</b>: htop is included in the
+<a href='http://build.opensuse.org/'>OpenSuSE build service</a>.
+<br>
+Thanks to Timo Hoenig.
+</li>
+</ul>
+<p>
+<b>Known problems in older distributions:</b>
+htop uses features of the C99 standard;
+therefore it fails to build with very old compilers.
+</p>
+</div>
+</div>
+<br>
+<br>
+<br>
+</body>
+</html>

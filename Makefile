@@ -4,7 +4,7 @@ WEB = htop-dev.github.io
 RSYNC := rsync -azvP --prune-empty-dirs \
 	--exclude '*.haml' --exclude 'Makefile' --exclude '*.swp' \
 	--exclude '.git' --exclude '.github' --exclude '.gitignore'
-LDIRT = *.html favicon.ico links.out
+LDIRT = links.out
 
 HAMLFILES = index \
 	downloads faq mailinglist screenshots sightings
@@ -12,14 +12,18 @@ HAMLFILES = index \
 all: clean default
 
 default:
-	ln -s images/htop.ico favicon.ico
+	rm -f site/favicon.ico
+	ln -s images/htop.ico site/favicon.ico
 	for h in `echo $(HAMLFILES)`; do \
-	    haml $$h.haml > dist/$$h.html; \
+	    haml $$h.haml > site/$$h.html; \
 	done
-	$(RSYNC) CNAME *.ico images assets dist
+	$(RSYNC) CNAME images assets site
+	git add site
+	git status
 
 deploy: 
-	git subtree push --prefix dist origin gh-pages
+	git commit -m 'Website content update'
+	git push
 
 check:
 	linkchecker --check-extern -v $(URL) | grep -v seconds > links.out || /bin/true

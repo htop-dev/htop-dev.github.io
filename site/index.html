@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>htop - an interactive process viewer</title>
+<script>
+  function animateBackground() {
+     var f = 1;
+     var terminal = document.querySelector(".fullscreen");
+     var ctx = document.getElementById("terminal").getContext('2d');
+     var timer = window.setInterval( function() {
+        var img = document.querySelector(".frame" + f);
+        if (img.complete) {
+           ctx.drawImage(img, 0, 0);
+        }
+        f++;
+        if (f == 4) { f = 0; }
+     }, 1000);
+  }
+</script>
+<style>
+  .fullscreen {
+     width: 100%;
+     height: 100%;
+     z-index: -100;
+     position: fixed;
+     left: 0;
+     top: 0;
+     margin: 0px;
+     padding: 0px;
+  }
+</style>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet'>
+<link href='assets/css/htop.css' media='all' rel='stylesheet' type='text/css'>
+<link href='images/htop.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body onload='animateBackground();'>
+<div class='fullscreen'>
+<canvas height='592' id='terminal' style='width:100%' width='900'></canvas>
+</div>
+<img class='frame0' height='0' src='images/frame-0.png' width='0'>
+<img class='frame1' height='0' src='images/frame-1.png' width='0'>
+<img class='frame2' height='0' src='images/frame-2.png' width='0'>
+<img class='frame3' height='0' src='images/frame-3.png' width='0'>
+
+<div class='content'>
+<div class='logo'>
+<a href='index.html'>
+<img src='images/htop-logo.png'>
+</a>
+</div>
+
+<table style='margin:0; padding:0; width: 100%;'>
+<tr style='margin:0; padding:0;'>
+<td style='margin:0; padding:0;'>
+<div class='menu'>
+<ul class='menu'>
+<li class='menuli'>
+<a class='menuitem' href='downloads.html'>Download</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='screenshots.html'>Screenshots</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='sightings.html'>Sightings</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='mailinglist.html'>List</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='faq.html'>FAQ</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='https://github.com/htop-dev/htop/issues'>Bug tracker</a>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+
+<div class='page'>
+<h1>htop - an interactive process viewer</h1>
+<p>
+This is htop, a cross-platform interactive process viewer.
+It is a text-mode application (for console or X terminals) and requires ncurses.
+</p>
+<p>
+<a href='https://github.com/htop-dev/htop/releases'>Latest release.</a>
+</p>
+<h2>What's new in htop</h2>
+<p>
+The latest releases in htop include delay accounting metrics for Linux,
+Solaris/Illumos/OpenIndiana and DragonFly BSD support,
+as well as many other features and bugfixes.
+Check out the
+<a href='https://github.com/htop-dev/htop/blob/master/ChangeLog'>changelog</a>
+for more details and credits!
+</p>
+<p>
+And here is Hisham's lightning talk at
+<a href='https://fosdem.org'>FOSDEM</a>
+presenting the latest and upcoming features:
+</p>
+<p style='text-align:center'>
+<iframe allow='autoplay; encrypted-media' allowfullscreen='' frameborder='0' height='315' src='https://www.youtube-nocookie.com/embed/L25waVhy78o' width='560'></iframe>
+</p>
+<p>
+Since version 2.0, htop is now
+<a href='https://fosdem.org/2016/schedule/event/htop/'>cross-platform!</a>
+Check out the
+<a href='https://youtu.be/g5GamptmWeA'>video</a>
+and
+<a href='htop_talk.pdf'>slides</a>
+of Hisham's presentation at FOSDEM 2016 about how this came to be.
+This release includes code supporting Linux, FreeBSD, OpenBSD, DragonFly BSD and MacOSX.
+</p>
+<center>
+<p>
+<a href='images/htop-2.0.png'>
+<img src='images/htop-2.0.png'>
+</a>
+</p>
+</center>
+<hr>
+</div>
+</div>
+<br>
+<br>
+<br>
+</body>
+</html>

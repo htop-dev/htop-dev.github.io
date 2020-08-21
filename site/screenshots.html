@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='initial-scale=1' name='viewport'>
+<title>htop - an interactive process viewer</title>
+<script>
+  function animateBackground() {
+     var f = 1;
+     var terminal = document.querySelector(".fullscreen");
+     var ctx = document.getElementById("terminal").getContext('2d');
+     var timer = window.setInterval( function() {
+        var img = document.querySelector(".frame" + f);
+        if (img.complete) {
+           ctx.drawImage(img, 0, 0);
+        }
+        f++;
+        if (f == 4) { f = 0; }
+     }, 1000);
+  }
+</script>
+<style>
+  .fullscreen {
+     width: 100%;
+     height: 100%;
+     z-index: -100;
+     position: fixed;
+     left: 0;
+     top: 0;
+     margin: 0px;
+     padding: 0px;
+  }
+</style>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet'>
+<link href='assets/css/htop.css' media='all' rel='stylesheet' type='text/css'>
+<link href='images/htop.ico' rel='shortcut icon' type='image/ico'>
+
+</head>
+<body onload='animateBackground();'>
+<div class='fullscreen'>
+<canvas height='592' id='terminal' style='width:100%' width='900'></canvas>
+</div>
+<img class='frame0' height='0' src='images/frame-0.png' width='0'>
+<img class='frame1' height='0' src='images/frame-1.png' width='0'>
+<img class='frame2' height='0' src='images/frame-2.png' width='0'>
+<img class='frame3' height='0' src='images/frame-3.png' width='0'>
+
+<div class='content'>
+<div class='logo'>
+<a href='index.html'>
+<img src='images/htop-logo.png'>
+</a>
+</div>
+
+<table style='margin:0; padding:0; width: 100%;'>
+<tr style='margin:0; padding:0;'>
+<td style='margin:0; padding:0;'>
+<div class='menu'>
+<ul class='menu'>
+<li class='menuli'>
+<a class='menuitem' href='downloads.html'>Download</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='screenshots.html'>Screenshots</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='sightings.html'>Sightings</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='mailinglist.html'>List</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='faq.html'>FAQ</a>
+</li>
+<li class='menuli'>
+<a class='menuitem' href='https://github.com/htop-dev/htop/issues'>Bug tracker</a>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+
+<div class='page'>
+<h1>Screenshots</h1>
+<p>
+Htop is of course a text-mode program, but here are
+some screenshots of it running in terminals:
+</p>
+<p>
+New-style graphs using Braille Unicode characters, inspired by
+<a href='https://github.com/MrRio/vtop'>vtop</a>,
+</p>
+<p>
+<a href='images/htop-2.0.png'>
+<img src='images/htop-2.0.png'>
+</a>
+</p>
+<p>
+Tree view, drawn with Unicode characters, new in htop 1.0:
+</p>
+<p>
+<a href='images/htop-1.0-screenshot.png'>
+<img src='images/htop-1.0-screenshot.png'>
+</a>
+</p>
+<p></p>
+<hr>
+<p>
+htop 1.0 showing the CPU average meter in graph mode:
+</p>
+<p>
+<a href='images/htop_graph.gif'>
+<img src='images/htop_graph.gif'>
+</a>
+</p>
+<p></p>
+<hr>
+<p>
+Since htop 1.0, there is better visual support for large numbers of processors. Here's a 64-core machine:
+</p>
+<p>
+<a href='images/htop-64.png'>
+<img src='images/htop-64.png' width='700px'>
+</a>
+</p>
+<p></p>
+<hr>
+<p>
+Configuring I/O scheduling priority (press "i"), new in htop 1.0.2:
+</p>
+<p>
+<img src='images/htop-1.0.2-io.png'>
+</p>
+<p></p>
+<hr>
+<p>
+Configuring CPU affinity (press "a"), new in htop 0.7:
+</p>
+<p>
+<img src='images/affinity.png'>
+</p>
+<p></p>
+<hr>
+<p>
+Tree view, SMP, and other features available since htop 0.5:
+</p>
+<p>
+<img src='images/htop-0.5.png'>
+</p>
+<p></p>
+<hr>
+<p>
+Color themes are available since htop 0.5.4, to suit both dark and light terminals:
+</p>
+<p>
+<img src='images/white_terminal.png'>
+</p>
+<p></p>
+<hr>
+<p>
+Default look, as of htop 0.4:
+</p>
+<p>
+<img src='images/htop-0.4.png'>
+</p>
+<p></p>
+<hr>
+<p>
+A more conservative setup, using a monochrome terminal:
+</p>
+<p>
+<img src='images/htop-monochrome.png'>
+</p>
+<p></p>
+<hr>
+<p>
+The meters at the header are fully customizable:
+</p>
+<p>
+<img src='images/htop-novo.png'>
+</p>
+<p></p>
+<hr>
+<p>
+An impressive setup: htop running on a machine with 128 cores and 1TB of RAM:
+</p>
+<p>
+<a href='images/128.png'>
+<img src='images/128.png' width='700px'>
+</a>
+</p>
+<p></p>
+<hr>
+<p>
+And thanks to htop's 4-column display mode, you can fit even more cores in a screen
+with ease and still have left for process information: here's a POWER8 machine with 176 cores!
+(Thanks to
+<a href='http://twitter.com/stdlib'>@stdlib</a>
+for the screenshot)
+</p>
+<p>
+<a href='images/176.png'>
+<img src='images/176.png' width='700px'>
+</a>
+</p>
+<p></p>
+<hr>
+<p>
+And here's the other extreme -- htop running on the tiny Raspberry Pi:
+</p>
+<p>
+<a href='images/RPi.png'>
+<img src='images/RPi.png' width='700px'>
+</a>
+</p>
+</div>
+</div>
+<br>
+<br>
+<br>
+</body>
+</html>
