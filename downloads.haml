@@ -22,6 +22,25 @@
             %a{:href => "#binaries"} Binaries
             \- pre-compiled binaries, provided by distributions
         %p
+          %b What's new in htop 3.0.1:
+        %ul
+          %li
+            Coverity fixes, CI improvements, documentation updates
+          %li
+            * BUGFIX: Fix early exit with longer sysfs battery paths
+          %li
+            * BUGFIX: Improve OOM output, fix sorting
+            (thanks to Christian Göttsche)
+          %li
+            * Rework check buttons and tree open/closed
+            (thanks to Bert Wesarg)
+          %li
+            * Add -U/--no-unicode option to disable unicode
+            (thanks to Christian Hesse)
+          %li
+            * Improvements to the affinity panel
+            (thanks to Bert Wesarg)
+        %p
           %b What's new in htop 3.0.0:
         %ul
           %li
@@ -321,7 +340,7 @@
               %u Stable, tarball
             \: Check out the official tarball for the
             = succeed "." do
-              %a{:href => "https://github.com/htop-dev/htop/releases"}
+              %a{:href => "https://bintray.com/htop/source/htop"}
                 latest version
           %li
             %b> Development, from the Git repository
