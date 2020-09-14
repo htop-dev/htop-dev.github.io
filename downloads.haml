@@ -22,23 +22,39 @@
             %a{:href => "#binaries"} Binaries
             \- pre-compiled binaries, provided by distributions
         %p
+          %b What's new in htop 3.0.2:
+        %ul
+          %li
+            BUGFIX: Drop 'vim_mode' - several issues, needs rethink
+          %li
+            BUGFIX: fix regression in -u optional-argument handling
+          %li
+            Build system rework to remove python, header generation
+            (thanks to Zev Weiss and Hugo Musso Gualandi)
+          %li
+            BUGFIX: report nice level correctly on Solaris
+            (thanks to Dominik Hassler)
+          %li
+            CI, code quality improvements
+            (thanks to Tobias Kortkamp, Christian Hesse, Benny Baumann)
+        %p
           %b What's new in htop 3.0.1:
         %ul
           %li
             Coverity fixes, CI improvements, documentation updates
           %li
-            * BUGFIX: Fix early exit with longer sysfs battery paths
+            BUGFIX: Fix early exit with longer sysfs battery paths
           %li
-            * BUGFIX: Improve OOM output, fix sorting
+            BUGFIX: Improve OOM output, fix sorting
             (thanks to Christian Göttsche)
           %li
-            * Rework check buttons and tree open/closed
+            Rework check buttons and tree open/closed
             (thanks to Bert Wesarg)
           %li
-            * Add -U/--no-unicode option to disable unicode
+            Add -U/--no-unicode option to disable unicode
             (thanks to Christian Hesse)
           %li
-            * Improvements to the affinity panel
+            Improvements to the affinity panel
             (thanks to Bert Wesarg)
         %p
           %b What's new in htop 3.0.0:
