@@ -22,6 +22,162 @@
             %a{:href => "#binaries"} Binaries
             \- pre-compiled binaries, provided by distributions
         %p
+          %b What's new in htop 3.0.3:
+        %ul
+          %li
+            Process sorting in 'tree' mode
+            (thanks to Maxim Zhiburt)
+          %li
+            Improved command display/sort functionality
+            (thanks to Narendran Gopalakrishnan)
+          %li
+            Add screen for active file locks
+            (thanks to Fynn J. Wulf)
+          %li
+            Calculate library size (M_LRS column) from maps file
+            (thanks to Fynn J. Wulf)
+          %li
+            Add a Zram meter
+            (thanks to Murloc Knight)
+          %li
+            Add Linux cwd process column
+            (thanks to Christian Göttsche)
+          %li
+            Dynamically load libsensors at runtime
+            (thanks to Christian Göttsche)
+          %li
+            Improve PressureStall Meter display strings
+            (thanks to Christian Göttsche)
+          %li
+            Hide process selection on ESC
+            (thanks to Christian Göttsche)
+          %li
+            Fully support non-ascii characters in Meter-Bar
+            (thanks to Christian Göttsche)
+          %li
+            Add support to change numeric options in settings screen
+            (thanks to Christian Göttsche)
+          %li
+            Rename virtual memory column from M_SIZE to M_VIRT
+            (thanks to Christian Göttsche)
+          %li
+            Add process column for normalized CPU usage
+            (thanks to Christian Göttsche)
+          %li
+            Show CPU temperature in CPU meter
+            (thanks to Christian Göttsche)
+          %li
+            Add a systemd meter
+            (thanks to Christian Göttsche)
+          %li
+            Add a network IO meter
+            (thanks to Christian Göttsche)
+          %li
+            Add a SELinux meter
+            (thanks to Christian Göttsche)
+          %li
+            Updates to the OpenFiles screen
+            (thanks to Christian Göttsche)
+          %li
+            Continue updating header data in paused mode
+            (thanks to Christian Göttsche)
+          %li
+            BUGFIX: Handle data wraparounds in IO meters
+            (thanks to Christian Göttsche)
+          %li
+            BUGFIX: Update InfoScreen content on resize
+            (thanks to Christian Göttsche)
+          %li
+            Add security attribute process column
+            (thanks to Christian Göttsche)
+          %li
+            Add DiskIOMeter for IO read/write usage
+            (thanks to Christian Göttsche)
+          %li
+            Read CPU frequency from sysfs by default
+            (thanks to Christian Göttsche)
+          %li
+            Add Linux process column for context switches
+            (thanks to Christian Göttsche)
+          %li
+            Several FreeBSD and Mac OS X platform updates
+            (thanks to Christian Göttsche)
+          %li
+            Add process environment for FreeBSD
+            (thanks to Ross Williams)
+          %li
+            Parse POWER_SUPPLY_CAPACITY for Linux Battery meter
+            (thanks to Jan Palus)
+          %li
+            Add octuple-column CPU meters.
+            (thanks to @multi)
+          %li
+            BUGFIX: On Linux consider ZFS ARC to be cache
+            (thanks to @multi)
+          %li
+            BUGFIX: Limit screen title length to window width
+            (thanks to @ryenus)
+          %li
+            Show selected command wrapped in a separate window
+            (thanks to @ryenus)
+          %li
+            Merged view for COMM, EXE and cmdline
+            (thanks to Narendran Gopalakrishnan and Benny Baumann)
+          %li
+            Allow to pass '/' for item search
+            (thanks to Benny Baumann)
+          %li
+            Avoid expensive build of process tree when not using it
+            (thanks to Benny Baumann)
+          %li
+            Include documentation for COMM and EXE
+            (thanks to Benny Baumann)
+          %li
+            Distinguish display of no permissions for reading M_LRS
+            (thanks to Benny Baumann)
+          %li
+            Only calculate M_LRS size every 2 seconds
+            (thanks to Benny Baumann)
+          %li
+            Consistent kernel thread display for COMM/EXE columns
+            (thanks to Benny Baumann)
+          %li
+            Central fault handling for all platforms
+            (thanks to Benny Baumann)
+          %li
+            Handle parsing envID and VPid from process status file
+            (thanks to Benny Baumann)
+          %li
+            Use threshold for display of guest/steal/irq meters
+            (thanks to Benny Baumann)
+          %li
+            Enhance highlighting of semi-large and large numbers
+            (thanks to Benny Baumann)
+          %li
+            Documentation on the repository style guide
+            (thanks to Benny Baumann)
+          %li
+            Align processor identifier to the right
+            (thanks to Christian Hesse)
+          %li
+            Document M_PSS, M_PSSWP, M_SWAP in man page
+            (thanks to Michael F. Schönitzer)
+          %li
+            Add Date and DateTime meters
+            (thanks to Michael F. Schönitzer)
+          %li
+            BUGFIX: Fix Solaris 11.4 due to missing ZFS ARC kstats
+            (thanks to @senjan)
+          %li
+            Code hardening, speedups, fd and memory leak fixes
+            (thanks to Christian Göttsche and Benny Baumann)
+          %li
+            Number CPUs from zero by default
+            (thanks to Zev Weiss)
+          %li
+            Remove residual python checks during the build process
+            (thanks to Stephen Gregoratto)
+        %p
           %b What's new in htop 3.0.2:
         %ul
           %li
