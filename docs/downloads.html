@@ -101,6 +101,81 @@ You can obtain it freely in two forms:
 </li>
 </ul>
 <p>
+<b>What's new in htop 3.0.4:</b>
+</p>
+<ul>
+<li>
+Separate tree and list sort orders
+(thanks to Hisham Muhammad)
+</li>
+<li>
+Unhardcode Mac OS tick-to-milliseconds conversion
+(thanks to Alexander Momchilov)
+</li>
+<li>
+Check if clock_gettime needs linking of librt, add O_PATH definition
+(thanks to Chris Burr)
+</li>
+<li>
+Add column on Mac for processes running under translation
+(thanks to Dániel Bakai)
+</li>
+<li>
+Configure check for additional linker flags for keypad(3)
+</li>
+<li>
+PSI Meter: constant width and only print ten-duration as bar
+</li>
+<li>
+Sort in paused mode after inverting sort order
+</li>
+<li>
+Handle absence of package CPU temperature
+</li>
+<li>
+Meter: restore non-wide-character build
+</li>
+<li>
+LibSensors: restore temperature for Raspberry Pi
+</li>
+<li>
+MainPanel: do not reset hideProcessSelection on KEY_SHUFFLE
+</li>
+<li>
+BarMeter: rework text padding
+</li>
+<li>
+Panel: rework drawing of FunctionBar
+</li>
+<li>
+Meter: fix artifacts with very tiny width
+</li>
+<li>
+DragonFlyBSD updates
+</li>
+<li>
+BUGFIX: Fix dlopen issue for libsensors5 for some platforms
+</li>
+<li>
+BUGFIX: Fix broken tree display on inverted sort order
+</li>
+<li>
+BUGFIX: Fix pause mode ("Z") in tree view
+</li>
+<li>
+BUGFIX: Correct timebase for non-x86 CPUs on Darwin
+</li>
+<li>
+BUGFIX: Avoid NULL dereference on zombie processes
+</li>
+<li>
+Document dynamic bindings and assumed external configuration
+</li>
+<li>
+Update key mapping documentation for sorting
+</li>
+</ul>
+<p>
 <b>What's new in htop 3.0.3:</b>
 </p>
 <ul>

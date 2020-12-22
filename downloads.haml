@@ -22,6 +22,57 @@
             %a{:href => "#binaries"} Binaries
             \- pre-compiled binaries, provided by distributions
         %p
+          %b What's new in htop 3.0.4:
+        %ul
+          %li
+            Separate tree and list sort orders
+            (thanks to Hisham Muhammad)
+          %li
+            Unhardcode Mac OS tick-to-milliseconds conversion
+            (thanks to Alexander Momchilov)
+          %li
+            Check if clock_gettime needs linking of librt, add O_PATH definition
+            (thanks to Chris Burr)
+          %li
+            Add column on Mac for processes running under translation
+            (thanks to Dániel Bakai)
+          %li
+            Configure check for additional linker flags for keypad(3)
+          %li
+            PSI Meter: constant width and only print ten-duration as bar
+          %li
+            Sort in paused mode after inverting sort order
+          %li
+            Handle absence of package CPU temperature
+          %li
+            Meter: restore non-wide-character build
+          %li
+            LibSensors: restore temperature for Raspberry Pi
+          %li
+            MainPanel: do not reset hideProcessSelection on KEY_SHUFFLE
+          %li
+            BarMeter: rework text padding
+          %li
+            Panel: rework drawing of FunctionBar
+          %li
+            Meter: fix artifacts with very tiny width
+          %li
+            DragonFlyBSD updates
+          %li
+            BUGFIX: Fix dlopen issue for libsensors5 for some platforms
+          %li
+            BUGFIX: Fix broken tree display on inverted sort order
+          %li
+            BUGFIX: Fix pause mode ("Z") in tree view
+          %li
+            BUGFIX: Correct timebase for non-x86 CPUs on Darwin
+          %li
+            BUGFIX: Avoid NULL dereference on zombie processes
+          %li
+            Document dynamic bindings and assumed external configuration
+          %li
+            Update key mapping documentation for sorting
+        %p
           %b What's new in htop 3.0.3:
         %ul
           %li
