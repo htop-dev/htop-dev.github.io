@@ -1,0 +1,7 @@
+# Expires: Sat, 01 Jan 2022 00:00 +0000
+Expires: Tue, 19 Jan 2038 03:15 +0000
+
+Contact: mailto:security@htop.dev
+Preferred-Languages: en, de
+
+Canonical: https://htop.dev/.well-known/security.txt
